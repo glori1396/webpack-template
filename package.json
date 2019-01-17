@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --open --config webpack.config.js",
+    "dev:hot": "webpack-dev-server --open --hot --config webpack.config.js",
     "start": "webpack"
   },
   "author": "",
@@ -21,13 +22,15 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-hot-loader": "^4.6.3"
   },
   "babel": {
     "presets": [
       "@babel/env",
       "@babel/react"
-      ]
-    }    
+    ]
+  }
 }

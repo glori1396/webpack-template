@@ -13,15 +13,13 @@ module.exports = {
     watchContentBase: true,
     progress: true
   },
-
+  devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: "babel-loader"
-        }
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -33,7 +31,8 @@ module.exports = {
               modules: true
             }
           }
-        ]
+        ],
+        exclude: /node_modules/
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
